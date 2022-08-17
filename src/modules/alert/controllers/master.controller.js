@@ -1,6 +1,6 @@
-import Action from "../models/action.model";
-import Reason from "../models/reason.model";
-import Machine from "../models/machine.model";
+import Action from "../models/action.model.js";
+import Reason from "../models/reason.model.js";
+import Machine from "../models/machine.model.js";
 
 const getActions = async (_, res, next) => {
   try {

@@ -1,4 +1,4 @@
-import Anomaly from "../models/anomaly.model";
+import Anomaly from "../models/anomaly.model.js";
 
 const getAnomaly = async (_, res, next) => {
   try {

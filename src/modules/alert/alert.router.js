@@ -4,8 +4,8 @@ import {
   getActions,
   getReasons,
   getMachines,
-} from "./controllers/master.controller";
-import { getAnomaly, updateAnomaly } from "./controllers/alert.controller";
+} from "./controllers/master.controller.js";
+import { getAnomaly, updateAnomaly } from "./controllers/alert.controller.js";
 
 const router = Router();
 
