@@ -1,9 +1,9 @@
-import { Router } from "express"
+import { Router } from "express";
 
-import user from "./modules/user/user.router.js";
+import alert from "./modules/alert/alert.router";
 
-const router = Router()
+const router = Router();
 
-router.use("/user", user);
+router.use("/alert", alert);
 
 export default router;
