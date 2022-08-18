@@ -26,7 +26,7 @@ app.use(morgan("dev"));
 
 app.use("/api/v1", globalRouter);
 
-app.use("/static", express.static("public/audios"));
+app.use("/be-static", express.static("public/audios"));
 
 app.use("*", (_, _1) => {
   throw new ForbiddenError();
