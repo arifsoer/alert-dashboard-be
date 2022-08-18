@@ -5,7 +5,7 @@ import {
   getReasons,
   getMachines,
 } from "./controllers/master.controller.js";
-import { getAnomaly, updateAnomaly } from "./controllers/alert.controller.js";
+import { getAnomaly, updateAnomaly, getAnomalyByMachine } from "./controllers/alert.controller.js";
 
 const router = Router();
 
@@ -14,6 +14,7 @@ router.get("/reaons", getReasons);
 router.get("/machines", getMachines);
 
 router.get("/anomalies", getAnomaly);
+router.get("/anomalies/bymachine/:machineId", getAnomalyByMachine)
 router.patch("/anomalies/:id", updateAnomaly);
 
 export default router;

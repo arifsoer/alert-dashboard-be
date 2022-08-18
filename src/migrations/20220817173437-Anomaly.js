@@ -27,6 +27,9 @@ module.exports = {
       soundClip: {
         type: Sequelize.STRING
       },
+      isAlreadyOpen: {
+        type: Sequelize.BOOLEAN
+      },
       detectedAt: {
         allowNull: false,
         type: Sequelize.DATE

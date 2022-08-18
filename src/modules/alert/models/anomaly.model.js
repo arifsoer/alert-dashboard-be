@@ -1,7 +1,10 @@
 import sequelize from "../../../config/sequelize.js";
 import { DataTypes } from "sequelize";
 
-export default sequelize.define(
+import Machine from "./machine.model.js"
+import Reason from "./reason.model.js"
+
+const anomaly = sequelize.define(
   "Anomaly",
   {
     id: {
@@ -16,6 +19,7 @@ export default sequelize.define(
     sensor: DataTypes.STRING,
     soundClip: DataTypes.STRING,
     detectedAt: DataTypes.DATE,
+    isAlreadyOpen: DataTypes.BOOLEAN,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },
@@ -23,3 +27,15 @@ export default sequelize.define(
     tableName: "Anomalies",
   }
 );
+
+anomaly.belongsTo(Machine, {
+  as: 'machine',
+  foreignKey: 'machineId'
+})
+
+anomaly.belongsTo(Reason, {
+  as: 'reason',
+  foreignKey: 'reasonId'
+})
+
+export default anomaly
