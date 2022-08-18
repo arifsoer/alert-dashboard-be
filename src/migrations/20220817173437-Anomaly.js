@@ -24,6 +24,10 @@ module.exports = {
       sensor: {
         type: Sequelize.BIGINT
       },
+      comment: {
+        allowNull: true,
+        type: Sequelize.STRING
+      },
       soundClip: {
         type: Sequelize.STRING
       },

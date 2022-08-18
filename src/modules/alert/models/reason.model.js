@@ -1,7 +1,9 @@
 import sequelize from "../../../config/sequelize.js";
 import { DataTypes } from "sequelize";
 
-export default sequelize.define(
+import Machine from './machine.model.js'
+
+const reason = sequelize.define(
   "Reason",
   {
     id: {
@@ -18,3 +20,10 @@ export default sequelize.define(
     tableName: "Reasons",
   }
 );
+
+reason.belongsTo(Machine, {
+  as: 'machine',
+  foreignKey: 'machineId'
+})
+
+export default reason

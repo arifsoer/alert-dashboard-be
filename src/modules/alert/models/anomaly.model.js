@@ -19,6 +19,7 @@ const anomaly = sequelize.define(
     sensor: DataTypes.STRING,
     soundClip: DataTypes.STRING,
     detectedAt: DataTypes.DATE,
+    comment: DataTypes.STRING,
     isAlreadyOpen: DataTypes.BOOLEAN,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,

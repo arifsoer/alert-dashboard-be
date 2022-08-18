@@ -10,6 +10,7 @@ export default sequelize.define(
       primaryKey: true,
     },
     name: DataTypes.STRING,
+    normalSound: DataTypes.STRING,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   },

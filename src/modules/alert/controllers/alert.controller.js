@@ -45,7 +45,13 @@ const updateAnomaly = async (req, res, next) => {
     const { id } = req.params;
     const newAnomaly = req.body;
 
-    await Anomaly.update({ id }, newAnomaly);
+    const anomaly = await Anomaly.findOne({where: {id}})
+
+    anomaly.reasonId = newAnomaly.reasonId
+    anomaly.actionId = newAnomaly.actionId
+    anomaly.comment = newAnomaly.comment
+
+    await anomaly.save()
 
     res.status(200).json({
       message: "success",

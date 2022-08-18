@@ -41,4 +41,22 @@ const getReasons = async (_, res, next) => {
   }
 };
 
-export { getActions, getReasons, getMachines };
+const getReasonsByMachine = async (req, res, next) => {
+  try {
+    const { machineId } = req.params;
+
+    const reasons = await Reason.findAll({
+      where: { machineId },
+      include: ["machine"],
+    });
+
+    res.status(200).json({
+      message: "success",
+      data: reasons,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+export { getActions, getReasons, getMachines, getReasonsByMachine };
