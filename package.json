@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "nodemon src/app.js",
+    "start": "node src/app.js",
     "migration:generate": "npx sequelize-cli migration:generate",
     "migrate:run": "npx sequelize-cli db:migrate",
     "seeder:generate": "npx sequelize-cli seed:generate",
